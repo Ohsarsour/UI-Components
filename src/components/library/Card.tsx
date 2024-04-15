@@ -47,23 +47,25 @@ export const ContentCard = ({
     children?: React.ReactNode
 }) => {
     return (
-        <div className="flex flex-col p-4 md:p-5">
-            {title && <h3 className="text-lg font-bold text-gray-800">{title}</h3>}
-            {subtitle && (
-                <p className="mt-1 text-xs font-medium uppercase text-gray-500">{subtitle}</p>
-            )}
-            {plaintext && <h3 className="mt-2 text-gray-800">{plaintext}</h3>}
-            {children}
-            {link && (
-                <a className="mt-5 inline-flex items-center gap-2 text-sm font-medium 
+        <CardContainer>
+            <div className="flex flex-col p-4 md:p-5">
+                {title && <h3 className="text-lg font-bold text-gray-800">{title}</h3>}
+                {subtitle && (
+                    <p className="mt-1 text-xs font-medium uppercase text-gray-500">{subtitle}</p>
+                )}
+                {plaintext && <h3 className="mt-2 text-gray-800">{plaintext}</h3>}
+                {children}
+                {link && (
+                    <a className="mt-5 inline-flex items-center gap-2 text-sm font-medium 
                  text-emerald-500 hover:text-emerald-500"
-                    href={link.url}
-                >
-                    {link.text}
+                        href={link.url}
+                    >
+                        {link.text}
 
-                </a>
-            )}
-        </div>
+                    </a>
+                )}
+            </div>
+        </CardContainer>
     )
 }
 

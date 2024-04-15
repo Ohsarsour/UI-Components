@@ -2,6 +2,7 @@ import { Section } from "./components/site/Section"
 import { Container } from "./components/site/Container"
 import { Layout } from "./components/site/Layout"
 import { Button } from "./components/library/Button"
+import { ContentCard } from "./components/library/Card"
 export default function App() {
 	return (
 
@@ -208,7 +209,33 @@ export default function App() {
 			</Container>
 
 
+			<Container
+				title="Card"
+				description=""
+			>
 
+
+				<Section
+					title="Simple"
+					description="Simple cards display content and can provide a distinct link that can be selected."
+				>
+					{/* Simple card */}
+					<ContentCard
+						title="Card title"
+						subtitle="Card subtitle"
+						plaintext="Some quick example text to build on the card title and make up the bulk of the card's content."
+						link={
+							{
+								url: "#",
+								text: "Card Link"
+							}
+						}
+					></ContentCard>
+				</Section>
+
+
+
+			</Container>
 
 		</Layout>
 
