@@ -31,12 +31,17 @@ export const CardContainer: React.FC<CardContainerProps> = (
 
 // This type of card is for displaying content
 export const ContentCard = ({
+    header,
+    footer,
     title,
     subtitle,
     plaintext,
     link,
     children
 }: {
+
+    header?: string
+    footer?: string
     title?: string
     subtitle?: string
     plaintext?: string
@@ -48,6 +53,12 @@ export const ContentCard = ({
 }) => {
     return (
         <CardContainer>
+
+
+            {header && <div className="rounded-t-xl border-b bg-gray-100 px-4 py-3 md:px-5 md:py-4">
+                <p className="mt-1 text-sm text-gray-500">{header}</p>
+            </div>}
+
             <div className="flex flex-col p-4 md:p-5">
                 {title && <h3 className="text-lg font-bold text-gray-800">{title}</h3>}
                 {subtitle && (
@@ -65,6 +76,9 @@ export const ContentCard = ({
                     </a>
                 )}
             </div>
+            {footer && <div className="rounded-b-xl border-t bg-gray-100 px-4 py-3 md:px-5 md:py-4">
+                <p className="mt-1 text-sm text-gray-500">{footer}</p>
+            </div>}
         </CardContainer>
     )
 }
