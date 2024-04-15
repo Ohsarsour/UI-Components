@@ -186,68 +186,30 @@ export default function App() {
 						variant="secondary"
 						colors={
 							{
-								text: "text-[#1da1f2]-500",
-								hoverBorder: "hover:border-[#1da1f2]",
-								hoverBg: "hover:bg-[#1da1f2]",
-								focusRing: "focus:ring-[#1da1f2]",
+								text: "text-red-500",
+								hoverBorder: "hover:border-red",
+								hoverBg: "hover:bg-red",
+								focusRing: "focus:ring-red",
 							}
 						}
-					>Twitter Blue</Button>
+					>Unsubscribe</Button>
 					<Button
 						variant="tertiary"
 						colors={
 							{
-								text: "text-amber-500",
-								hoverText: "hover:text-amber-700",
-								focusRing: "focus:ring-amber-500",
+								text: "text-gray-500",
+								hoverText: "hover:text-gray-700",
+								focusRing: "focus:ring-gray-500",
 							}
 						}
-					>Amber</Button>
+					>Cancel</Button>
 
 				</Section>
 			</Container>
 
-			<Container title="Component name using component"
-				description="Component description using component">
-				<Section
-					title="Section heading using a component"
-					description="Section description"
-				>
-					<div className="bg-blue-500/50 p-3">component 1 using a component</div>
-					<div className="bg-blue-500/50 p-3">component 2 using a component</div>
 
-				</Section>
 
-				<Section
-					title="Section heading using a component"
-					description="Section description"
-				>
-					<div className="bg-blue-500/50 p-3">component 1 using a component</div>
-					<div className="bg-blue-500/50 p-3">component 2 using a component</div>
 
-				</Section>
-			</Container>
-
-			<Container title="Component name using component"
-				description="Component description using component">
-				<Section
-					title="Section heading using a component"
-					description="Section description"
-				>
-					<div className="bg-blue-500/50 p-3">component 1 using a component</div>
-					<div className="bg-blue-500/50 p-3">component 2 using a component</div>
-
-				</Section>
-
-				<Section
-					title="Section heading using a component"
-					description="Section description"
-				>
-					<div className="bg-blue-500/50 p-3">component 1 using a component</div>
-					<div className="bg-blue-500/50 p-3">component 2 using a component</div>
-
-				</Section>
-			</Container>
 		</Layout>
 
 	)
