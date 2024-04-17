@@ -12,12 +12,12 @@ export const Container = ({
 ) => {
     return (
         <>
-            <header>
+            <header className="mb-10 border-b pb-10 dark:border-zinc-700">
 
-                <h1 className="block text-2xl font-bold text-gray-800 sm:text-3xl">
+                <h1 className="block text-2xl font-bold text-gray-800  dark:text-white sm:text-3xl">
                     {title}
                 </h1>
-                <p className="mt-2 text-lg text-gray-800">
+                <p className="mt-2 text-lg text-gray-800 dark:text-zinc-400">
                     {description}
                 </p>
             </header>

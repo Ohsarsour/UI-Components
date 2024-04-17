@@ -4,6 +4,7 @@ import { Layout } from "./components/site/Layout"
 import { Button } from "./components/library/Button"
 import { BlockLinkCard, ContentCard } from "./components/library/Card"
 import { SiVite, SiNextdotjs } from "react-icons/si"
+import { Input } from "./components/library/Input"
 export default function App() {
 	return (
 
@@ -64,6 +65,7 @@ export default function App() {
 								hoverBorder: "hover:border-amber-500",
 								hoverBg: "hover:bg-amber-600",
 								focusRing: "focus:ring-amber-500",
+								darkHoverBorder: "dark:hover:border-amber-500"
 							}
 						}
 					>Amber</Button>
@@ -75,6 +77,7 @@ export default function App() {
 								hoverBorder: "hover:border-rose-500",
 								hoverBg: "hover:bg-rose-600",
 								focusRing: "focus:ring-rose-500",
+								darkHoverBorder: "dark:hover:border-rose-500"
 							}
 						}
 					>Rose</Button>
@@ -86,6 +89,7 @@ export default function App() {
 								hoverBorder: "hover:border-fuchsia-500",
 								hoverBg: "hover:bg-fuchsia-600",
 								focusRing: "focus:ring-fuchsia-500",
+								darkHoverBorder: "dark:hover:border-fuchsia-500"
 							}
 						}
 					>Fuchsia</Button>
@@ -97,6 +101,7 @@ export default function App() {
 								hoverBorder: "hover:border-indigo-500",
 								hoverBg: "hover:bg-indigo-600",
 								focusRing: "focus:ring-indigo-500",
+								darkHoverBorder: "dark:hover:border-indigo-500"
 							}
 						}
 					>Indigo</Button>
@@ -108,6 +113,7 @@ export default function App() {
 								hoverBorder: "hover:border-[#1da1f2]",
 								hoverBg: "hover:bg-[#1da1f2]",
 								focusRing: "focus:ring-[#1da1f2]",
+								darkHoverBorder: "dark:hover:border-[#1da1f2]-500"
 							}
 						}
 					>Twitter Blue</Button>
@@ -129,6 +135,7 @@ export default function App() {
 								text: "text-amber-500",
 								hoverText: "hover:text-amber-700",
 								focusRing: "focus:ring-amber-500",
+								darkHoverText: "dark:hover:text-amber-500"
 							}
 						}
 					>Amber</Button>
@@ -139,6 +146,7 @@ export default function App() {
 								text: "text-rose-500",
 								hoverText: "hover:text-rose-700",
 								focusRing: "focus:ring-rose-500",
+								darkHoverText: "dark:hover:text-rose-500"
 							}
 						}
 					>Rose</Button>
@@ -149,6 +157,7 @@ export default function App() {
 								text: "text-fuchsia-500",
 								hoverText: "hover:text-fuchsia-700",
 								focusRing: "focus:ring-fuchsia-500",
+								darkHoverText: "dark:hover:text-fuchsia-500"
 							}
 						}
 					>Fuchsia</Button>
@@ -159,6 +168,7 @@ export default function App() {
 								text: "text-indigo-500",
 								hoverText: "hover:text-indigo-700",
 								focusRing: "focus:ring-indigo-500",
+								darkHoverText: "dark:hover:text-indigo-500"
 							}
 						}
 					>Indigo</Button>
@@ -169,6 +179,7 @@ export default function App() {
 								text: "text-[#1da1f2]",
 								hoverText: "hover:text-[#1a8cd8]",
 								focusRing: "focus:ring-[#1da1f2]",
+								darkHoverText: "dark:hover:text-[#1da1f2]-500"
 							}
 						}
 					>Twitter Blue</Button>
@@ -192,6 +203,7 @@ export default function App() {
 								hoverBorder: "hover:border-red",
 								hoverBg: "hover:bg-red",
 								focusRing: "focus:ring-red",
+								darkHoverBorder: "dark:hover:border-red-500"
 							}
 						}
 					>Unsubscribe</Button>
@@ -202,6 +214,7 @@ export default function App() {
 								text: "text-gray-500",
 								hoverText: "hover:text-gray-700",
 								focusRing: "focus:ring-gray-500",
+								darkHoverText: "dark:hover:text-zinc-400"
 							}
 						}
 					>Cancel</Button>
@@ -212,7 +225,7 @@ export default function App() {
 
 			<Container
 				title="Card"
-				description=""
+				description="A card is a flexible and extensible content container."
 			>
 
 
@@ -281,6 +294,48 @@ export default function App() {
 						<SiNextdotjs className="h-10 w-10" />
 
 					</BlockLinkCard>
+				</Section>
+
+
+			</Container>
+
+
+			<Container
+				title="Inputs"
+				description="An input is a widget that allows users to provide data or specify options, which can be submitted as part of a form or used to interact with and manipulate content on a web page."
+			>
+
+
+				<Section
+					title="Basic"
+					description="Basic input with a placeholder."
+				>
+					{/* Basic Input */}
+
+					<Input type="text" placeholder="Type things here."></Input>
+
+					{/* Basic Disabled Input */}
+					<Input disabled type="text" placeholder="Disabled"></Input>
+
+				</Section>
+
+
+				<Section
+					title="Label"
+					description="Input with a label."
+				>
+
+					{/* Label Input */}
+					<Input type="email" label="Email" placeholder="you@site.com"></Input>
+				</Section>
+				<Section
+					title="Description"
+					description="Input with a description."
+				>
+					{/* Description Input */}
+					<Input type="password" label="Password" description="We'll never share your details." placeholder="Secret!"></Input>
+
+
 				</Section>
 
 

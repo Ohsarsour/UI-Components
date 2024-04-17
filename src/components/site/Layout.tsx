@@ -7,7 +7,7 @@ export const Layout = ({
         children: React.ReactNode
     }) => {
     return (
-        <div className="relative min-h-screen bg-white">
+        <div className="relative min-h-screen bg-white dark:bg-zinc-900">
             <Navbar />
             {/* Main content area */}
 
