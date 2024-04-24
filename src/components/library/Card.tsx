@@ -3,13 +3,24 @@
 // Define the type for the props that will be accepted by the card container
 import { twMerge } from "tailwind-merge"
 
-type CardContainerProps = React.HTMLAttributes<HTMLDivElement>
+type CardContainerProps = React.HTMLAttributes<HTMLDivElement> & {
+    widthLimit?: "none" | "xs" | "sm" | "md" | "lg"
+}
+
+const cardWidths = {
+    xs: "max-w-xs",
+    sm: "max-w-sm",
+    md: "max-w-md",
+    lg: "max-w-lg",
+    none: "",
+}
 
 
 export const CardContainer: React.FC<CardContainerProps> = (
     {
         className,
         children,
+        widthLimit = "xs",
         ...props
     }
 ) => {
@@ -18,8 +29,10 @@ export const CardContainer: React.FC<CardContainerProps> = (
     const baseClasses: string = "rounded-xl border bg-white shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:shadow-zinc-700/[.7]"
 
     const mergedClasses = twMerge([baseClasses, className])
+
+    const widthClass = twMerge(["w-full", cardWidths[widthLimit]])
     return (
-        <div className="w-full max-w-xs" {...props}>
+        <div className={widthClass} {...props}>
             <div className={mergedClasses}>
                 {children}
 
@@ -37,6 +50,7 @@ export const ContentCard = ({
     subtitle,
     plaintext,
     link,
+    widthLimit,
     children
 }: {
 
@@ -49,10 +63,11 @@ export const ContentCard = ({
         url: string,
         text: string
     }
+    widthLimit?: CardContainerProps["widthLimit"]
     children?: React.ReactNode
 }) => {
     return (
-        <CardContainer>
+        <CardContainer widthLimit={widthLimit}>
 
 
             {header && <div className="rounded-t-xl border-b bg-gray-100 px-4 py-3 dark:border-zinc-700 dark:bg-zinc-800 md:px-5 md:py-4">
@@ -88,11 +103,17 @@ export const BlockLinkCard = (
     {
         url,
         text,
-        children
+        children,
+        CustomLinkComponent,
+        customLinkProps = {},
+        widthLimit
     }: {
         url?: string, //url for link if non provided will default to #
         text?: string // the text content displayed inside the card
         children?: React.ReactNode // children elements that will be rendered inside the card
+        CustomLinkComponent?: React.ComponentType<any>
+        customLinkProps?: any
+        widthLimit?: CardContainerProps["widthLimit"]
     }
 ) => {
 
@@ -105,10 +126,21 @@ export const BlockLinkCard = (
         </>
     )
     return (
-        <CardContainer className="text-gray-800 transition-colors hover:bg-gray-200/50 dark:text-white dark:hover:bg-zinc-700/[50]">
-            <a href={url || "#"} className={linkClasses} target="_blank">
-                {linkContent}
-            </a>
+        <CardContainer widthLimit={widthLimit} className="text-gray-800 transition-colors hover:bg-gray-200/50 dark:text-white dark:hover:bg-zinc-700/[50]">
+            {
+                CustomLinkComponent ? (
+                    <CustomLinkComponent className={linkClasses} {...customLinkProps}>
+                        {linkContent}
+                    </CustomLinkComponent>
+                ) : (
+                    <a href={url || "#"} className={linkClasses} target="_blank"
+                        {...(customLinkProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+                        {linkContent}
+                    </a>
+                )
+
+            }
+
 
         </CardContainer>
     )

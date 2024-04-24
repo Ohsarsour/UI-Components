@@ -2,6 +2,7 @@ import { SiLinkedin, SiGithub } from "react-icons/si"
 
 import { useTheme } from "./useTheme"
 import { HiMiniMoon, HiMiniSun } from "react-icons/hi2"
+import { Link } from "react-router-dom"
 export const Navbar = () => {
 
     return (
@@ -11,9 +12,10 @@ export const Navbar = () => {
 
                     <div className="flex justify-between">
                         <div className="flex flex-1 items-center justify-start">
-                            <a href="/" className="inline-flex h-10 items-center justify-center text-lg font-bold text-gray-800 dark:text-white">
+                            <Link className="inline-flex h-10 items-center justify-center text-lg font-bold text-gray-800 dark:text-white"
+                                to="/">
                                 Ohsarsou
-                            </a>
+                            </Link>
                         </div>
                         <div className="flex flex-1 items-center justify-end">
 
